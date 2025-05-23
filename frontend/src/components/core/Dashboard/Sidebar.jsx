@@ -90,7 +90,7 @@ export default function Sidebar() {
               iconName={"VscSettingsGear"}
               setOpenSideMen={setOpenSideMenu}
             />
-
+          
             <button
               onClick={() =>
                 setConfirmationModal({

@@ -150,6 +150,7 @@ const Navbar = () => {
 
                 {/* Login/SignUp/Dashboard */}
                 <div className='flex gap-x-4 items-center'>
+                    <Link to="/dailyChallenge">D</Link>
                     {
                         user && user?.accountType !== "Instructor" && (
                             <Link to="/dashboard/cart" className="relative">
@@ -186,7 +187,6 @@ const Navbar = () => {
                             </Link>
                         )
                     }
-
                     {/* for large devices */}
                     {token !== null && <ProfileDropDown />}
 
