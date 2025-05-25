@@ -1,0 +1,26 @@
+# React - frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# Spring Boot - backend
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/*.iml
+backend/.env
+backend/.idea/
+
+# Global
+.DS_Store
+*.log
+*.tmp
+
+# IDEs
+*.iml
+.idea/
+.settings/
+.project
+.classpath
+
