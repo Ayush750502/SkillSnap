@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -26,7 +25,7 @@ import Settings from "./components/core/Dashboard/Settings/Settings";
 import MyCourses from './components/core/Dashboard/MyCourses';
 import EditCourse from './components/core/Dashboard/EditCourse/EditCourse';
 import Instructor from './components/core/Dashboard/Instructor';
-
+import DailyChallenge from "./pages/DailyChallenge";
 
 import Cart from "./components/core/Dashboard/Cart/Cart";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
@@ -38,8 +37,10 @@ import VideoDetails from './components/core/ViewCourse/VideoDetails';
 import { ACCOUNT_TYPE } from './utils/constants';
 
 import { HiArrowNarrowUp } from "react-icons/hi"
-import DailyChallenge from "./pages/DailyChallenge";
 
+import ProblemList from "./components/coding-challenges/ProblemList";
+import ProblemDetail from "./components/coding-challenges/ProblemDetail";
+import SubmissionList from "./components/coding-challenges/SubmissionList";
 
 function App() {
 
@@ -94,6 +95,13 @@ function App() {
         <Route path= "/dailyChallenge" element={<DailyChallenge />} />
         <Route path="catalog/:catalogName" element={<Catalog />} />
         <Route path="courses/:courseId" element={<CourseDetails />} />
+
+        {/* Coding Challenges Routes - Protected */}
+        <Route element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
+          <Route path="/coding-challenges" element={<ProblemList />} />
+          <Route path="/coding-challenges/:id" element={<ProblemDetail />} />
+          <Route path="/submissions" element={<SubmissionList />} />
+        </Route>
 
         {/* Open Route - for Only Non Logged in User */}
         <Route
@@ -192,7 +200,7 @@ function App() {
 
 
         {/* Page Not Found (404 Page ) */}
-        <Route path="*" element={<PageNotFound />} />
+        {/* <Route path="*" element={<PageNotFound />} /> */}
 
       </Routes>
 
